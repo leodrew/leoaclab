@@ -1,0 +1,12 @@
+{% extends 'acapp/base.html'%}
+{% block body_block %}
+<div class="jumbotron">
+    <h1>發文系統</h1>
+    <form action="{% url 'acapp:post_blog' %}" method="POST">
+       {%csrf_token%}
+       {{postblogform.as_p}}
+       <input type="submit" class="btn btn-primary"  value="submit">
+    </form>
+   </div>
+
+{%endblock%}
